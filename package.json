@@ -1,0 +1,22 @@
+{
+  "name": "moviesapp",
+  "version": "1.0.0",
+  "description": "Movies App where you can watch your favourite movies",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd movie_ocean && npm start",
+    "dev": "concurrently  \"npm run server\" \"npm run client\" "
+  },
+  "keywords": [],
+  "author": "Shubham Thorat",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14"
+  }
+}

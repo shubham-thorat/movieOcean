@@ -1,0 +1,37 @@
+.movie-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:1rem;
+    background-color: #22254b;
+}
+
+.movie{
+    position: relative;
+    width: 280px;
+    margin: 1rem;
+    background-color: #E0E0E0 !important;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+
+.movie-overview{
+    padding: 0.5rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    bottom: 0rem;
+    background-color: white;
+    color: #22254b;
+    overflow: auto;
+    max-height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-over:hover .movie-overview{
+    transform: translateY(0%);
+}
