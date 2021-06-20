@@ -6,8 +6,11 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon server.js",
-    "client": "cd movie_ocean && npm start",
+    "client": "cd client && npm start",
     "dev": "concurrently  \"npm run server\" \"npm run client\" "
   },
   "keywords": [],

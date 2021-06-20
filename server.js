@@ -12,6 +12,11 @@ app.use('/movies', movies);
 
 
 const port = process.env.PORT || 8080;
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+}
+
 async function run() {
     await initDB();
     app.listen(port, () => {
