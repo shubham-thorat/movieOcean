@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import path from 'path'
 import movies from './routes/movies.js'
 import { initDB } from './models/initDB.js'
 dotenv.config()
@@ -13,8 +14,13 @@ app.use('/movies', movies);
 
 const port = process.env.PORT || 8080;
 
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'))
+    app.use(express.static(path.join(__dirname, 'client/build')));
+
+    app.get('*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
 }
 
 async function run() {
